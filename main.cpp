@@ -197,6 +197,7 @@ class Room {
         void handlePlayerCollision(Player& player) {
             for (size_t i = 0; i < enemies.size(); ++i) {
                 if (enemies[i].getX() == player.getX() && enemies[i].getY() == player.getY()) {
+                    Beep(400, 100);
                     int val = enemies[i].getSymbol() - '0';
                     int damage = (5 - val) * 20;
                     player.damage(damage);
@@ -208,6 +209,7 @@ class Room {
         
             for (size_t i = 0; i < friends.size(); ++i) {
                 if (friends[i].getX() == player.getX() && friends[i].getY() == player.getY()) {
+                    Beep(1000, 150);
                     int val = friends[i].getSymbol() - '0';
                     player.heal(val * 10);
                     level[player.getX()][player.getY()] = 'P';
@@ -344,7 +346,7 @@ public:
                 Room* current = getCurrentRoom();
                 std::cout << "                 Health: " << player->getHealth() << " =============   ";
                 if (current) {
-                    std::cout << *current << "\n";
+                    std::cout << *current;
                 } else {
                     std::cout << "You are not in any SESIUNE.\n";
                 }
