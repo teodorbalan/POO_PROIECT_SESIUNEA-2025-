@@ -1,4 +1,10 @@
-# Nu primesc notă pentru că nu am pus titlu și descriere
+# Proiect Sesiunea POO 2025
+🎓 Când studentul începe să creadă că viața e frumoasă și liniștită... apare ea, neiertătoare și nemiloasă: SESIUNEA.
+După un strop de relaxare și false speranțe, revine cu forțe proaspete să-ți zdrobească zenul.
+
+🎯 Tu, dragă student, ai o misiune clară:
+Ferește-te de corigențe, adună notele de trecere și înfruntă provocările academice cu capul sus.
+Iar dacă reușești... te așteaptă o recompensă pe măsură! 😉
 
 ### Folosiți template-ul corespunzător grupei voastre!
 
