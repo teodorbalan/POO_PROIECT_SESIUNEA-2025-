@@ -1,2 +1,10 @@
+# Exclude generated files from stats
 generated/** linguist-generated
+
+# Exclude vendor libraries from stats
 ext/** linguist-vendored
+
+# Force GitHub to detect this as a C++ project
+*.cpp linguist-language=C++
+*.hpp linguist-language=C++
+*.h   linguist-language=C++
