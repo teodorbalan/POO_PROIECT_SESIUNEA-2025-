@@ -1,0 +1,30 @@
+name: Release on Tag
+
+on:
+  push:
+    tags:
+      - 'v*'   
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up CMake
+        run: sudo apt-get update && sudo apt-get install -y cmake g++
+
+      - name: Build the project
+        run: |
+          cmake -S . -B build
+          cmake --build build
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
