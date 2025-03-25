@@ -3,7 +3,7 @@ name: Release on Tag
 on:
   push:
     tags:
-      - 'v*'   
+      - 'v*'
 
 jobs:
   build-and-release:
@@ -18,13 +18,19 @@ jobs:
 
       - name: Build the project
         run: |
-          cmake -S . -B build
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
           cmake --build build
+
+      - name: Prepare artifacts
+        run: |
+          mkdir dist
+          cp build/oop dist/oop # rename if needed
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           name: Release ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
+          files: dist/oop
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
