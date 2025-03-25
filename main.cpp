@@ -317,7 +317,7 @@ public:
     void showMenu(bool died) {
         system("cls");
         if (died) {
-            std::cout << "Oops, you died!\n";
+            std::cout << "Oops, ai picat fraiere!\n";
             std::cout << "Press ENTER to play again or Q to quit...\n";
         } else {
             std::cout << "Welcome to the Treci Sesiunea!\n";
